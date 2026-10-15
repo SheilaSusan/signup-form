@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Create your account</h1>
+    <p class="subtitle">It only takes a minute.</p>
+
+    <form id="signup-form" novalidate>
+
+      <div class="field">
+        <label for="name">Full name</label>
+        <input id="name" type="text" autocomplete="name" />
+        <p id="name-error" class="error" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="email" />
+        <p id="email-error" class="error" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="phone">Mobile number</label>
+        <input id="phone" type="tel" placeholder="+230 5XXX XXXX" autocomplete="tel" />
+        <p id="phone-error" class="error" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="new-password" />
+        <div class="strength" data-level="0" aria-hidden="true">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <p id="strength-label" class="strength-label"></p>
+        <p id="password-error" class="error" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="confirm">Confirm password</label>
+        <input id="confirm" type="password" autocomplete="new-password" />
+        <p id="confirm-error" class="error" role="alert"></p>
+      </div>
+
+      <button id="submit-btn" type="submit" disabled>Sign up</button>
+
+      <p id="success-message" class="success" role="status" hidden></p>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

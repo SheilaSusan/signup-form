@@ -1,0 +1,93 @@
+:root {
+  --bg: #0b1020;
+  --card: #151b2e;
+  --input: #1d2540;
+  --border: #2c3558;
+  --text: #e8ebf5;
+  --muted: #8d97b8;
+  --accent: #6366f1;
+  --accent-hover: #7f82f5;
+  --error: #f87171;
+  --success: #34d399;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+.field { margin-bottom: 1.1rem; }
+
+label { display: block; font-size: 0.85rem; margin-bottom: 0.35rem; }
+
+input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input:focus { border-color: var(--accent); }
+input.invalid { border-color: var(--error); }
+input.valid { border-color: var(--success); }
+
+.error {
+  color: var(--error);
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+  min-height: 1rem; /* reserves space so the layout doesn't jump */
+}
+
+/* Password strength meter */
+.strength { display: flex; gap: 4px; margin-top: 0.5rem; }
+.bar { flex: 1; height: 6px; border-radius: 3px; background: var(--border); transition: background 0.2s; }
+.strength-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; min-height: 1rem; }
+
+.strength[data-level="1"] .bar:nth-child(-n+1) { background: #ef4444; }
+.strength[data-level="2"] .bar:nth-child(-n+2) { background: #f59e0b; }
+.strength[data-level="3"] .bar:nth-child(-n+3) { background: #eab308; }
+.strength[data-level="4"] .bar:nth-child(-n+4) { background: var(--success); }
+
+button {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+button:hover:not(:disabled) { background: var(--accent-hover); }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.success { text-align: center; color: var(--success); margin-top: 1rem; font-size: 0.95rem; }
